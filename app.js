@@ -1,6 +1,7 @@
 $(function() {
 
     /* Fixed header */
+
     let header = $("#header");
     let intro = $("#intro");
     let scrollPos = $(window).scrollTop();
