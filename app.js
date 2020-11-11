@@ -64,44 +64,48 @@ $(function() {
             let addDiv2  = document.createElement('div'),
                 animationScale = 1,
                 animDirection = Math.random() * 360 * 0.0174533,
-                xLength = 300*animationScale*Math.round(Math.cos(animDirection)),
-                yLength = 300*animationScale*Math.round(Math.sin(animDirection)),
+                xLength = Math.round(300*animationScale*Math.cos(animDirection)),
+                yLength = Math.round(300*animationScale*Math.sin(animDirection)),
                 cursorXp = e.pageX,
                 cursorYp = e.pageY,
                 intro = $("#intro");
-            if (cursorYp < intro.innerHeight()) {
-                intro.append(addDiv2);
+            if (cursorYp < intro.innerHeight() && cursorXp < intro.innerWidth() - 15) {
                 addDiv2.classList.add('mouseAnim');
                 addDiv2.style.left = cursorXp + 'px';
                 addDiv2.style.top = cursorYp + 'px';
                 addDiv2.innerHTML = '*';
-                if ((cursorXp + xLength >= intro.innerWidth()) || (cursorYp + yLength >= intro.innerHeight())) {
-                    addDiv2.animate([
-                        {
 
-                        },
+                if (cursorXp + xLength < intro.innerWidth()) {
+                    intro.append(addDiv2);
+                    addDiv2.animate([
+                        {},
                         {
-                            right: intro.innerWidth(),
+                            left: cursorXp + xLength + 'px',
                             top: cursorYp + yLength + 'px'
                         }
-                    ])
-                } else {
-            addDiv2.animate([
-                {
-
-                },
-                {
-                    left: cursorXp + xLength + 'px',
-                    top: cursorYp + yLength + 'px'
+                    ], {
+                        duration: 1000 * animationScale,
+                        iterations: 1
+                    });
+                    setTimeout(() => addDiv2.remove(), 900 * animationScale);
+                }else{
+                    intro.append(addDiv2);
+                    addDiv2.animate([
+                        {},
+                        {
+                            left: intro.innerWidth()-15 + 'px',
+                            top: cursorYp + yLength + 'px'
+                        }
+                    ], {
+                        duration: 1000 * animationScale,
+                        iterations: 1
+                    });
+                    setTimeout(() => addDiv2.remove(), 900 * animationScale);
                 }
-            ],{
-                duration: 1000*animationScale,
-                iterations: 1
-            });
-            setTimeout(() => addDiv2.remove(), 1000*animationScale);}
+
             let onceSupported1 = true;
             setTimeout(() => document.addEventListener('mousemove', dragStart, onceSupported1
-                ? { once: true } : false), 100);
+                ? { once: true } : false), 50);
         } else {
             document.addEventListener('mousemove', dragStart, onceSupported ? { once: true } : false);
         }
