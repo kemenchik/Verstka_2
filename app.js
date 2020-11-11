@@ -1,6 +1,10 @@
 $(function() {
 
     /* Fixed header */
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6080f8da8817c3f05fbdc5bf87dc58e944e93646
     let header = $("#header");
     let intro = $("#intro");
     let scrollPos = $(window).scrollTop();
@@ -55,6 +59,7 @@ $(function() {
     });
 
 
+<<<<<<< HEAD
 });
 
 
@@ -140,3 +145,6 @@ $(function() {
         document.addEventListener('mousemove', dragStart, onceSupported ? { once: true } : false);
     })
 
+=======
+});
+>>>>>>> 6080f8da8817c3f05fbdc5bf87dc58e944e93646
