@@ -140,9 +140,6 @@ p{
 ============================
 */
 
-.btn{
-
-}
 
 .btn{
     display: inline-block;
@@ -153,10 +150,12 @@ p{
     font-size: 13px;
     color: #fff;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
     text-decoration: none;
     padding: 14px 40px;
     transition: background-color .4s;
+    outline: none;
+
 }
 
 .btn--red{

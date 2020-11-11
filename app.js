@@ -85,7 +85,7 @@ $(function() {
                         left: cursorXp + xLength + 'px',
                         top: cursorYp + yLength + 'px',
                         transform: 'rotate(500deg)',
-                        
+
                     }
                 ], {
                     duration: 10000 * animationScale,
@@ -103,6 +103,7 @@ $(function() {
         };
 
         //пульсация кнопки
+
         function addElement(e){
             let addDiv1  = document.createElement('div'),
                 mValue      = Math.max(this.clientWidth, this.clientHeight),
@@ -124,11 +125,9 @@ $(function() {
         let forEach = Array.prototype.forEach;
 
         forEach.call(buttons, function (b) {
+
             b.addEventListener('click', addElement)
         });
-
-
-
 
         let onceSupported = true;
         document.addEventListener('mousemove', dragStart, onceSupported ? { once: true } : false);
