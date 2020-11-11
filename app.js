@@ -1,10 +1,7 @@
 $(function() {
 
     /* Fixed header */
-<<<<<<< HEAD
-=======
 
->>>>>>> 6080f8da8817c3f05fbdc5bf87dc58e944e93646
     let header = $("#header");
     let intro = $("#intro");
     let scrollPos = $(window).scrollTop();
@@ -59,9 +56,6 @@ $(function() {
     });
 
 
-<<<<<<< HEAD
-});
-
 
     $(document).ready(function(){
 
@@ -70,8 +64,8 @@ $(function() {
             let addDiv2  = document.createElement('div'),
                 animationScale = 1,
                 animDirection = Math.random() * 360 * 0.0174533,
-                xLength = 3000*animationScale*Math.round(Math.cos(animDirection)),
-                yLength = 3000*animationScale*Math.round(Math.sin(animDirection)),
+                xLength = 300*animationScale*Math.round(Math.cos(animDirection)),
+                yLength = 300*animationScale*Math.round(Math.sin(animDirection)),
                 cursorXp = e.pageX,
                 cursorYp = e.pageY,
                 intro = $("#intro");
@@ -87,8 +81,8 @@ $(function() {
 
                         },
                         {
-                            right: intro.innerWidth();
-                            top:
+                            right: intro.innerWidth(),
+                            top: cursorYp + yLength + 'px'
                         }
                     ])
                 } else {
@@ -145,6 +139,4 @@ $(function() {
         document.addEventListener('mousemove', dragStart, onceSupported ? { once: true } : false);
     })
 
-=======
 });
->>>>>>> 6080f8da8817c3f05fbdc5bf87dc58e944e93646
